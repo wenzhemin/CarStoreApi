@@ -17,6 +17,10 @@ route::get('/', function () {
 });
 */
 
+/*
 Route::get('/', 'CarsController@index');
 
-Route::get('/cars', 'CarsController@getAll');
+Route::get('/cars', 'CarsController@create');
+*/
+
+Route::resource('cars', 'CarsController');

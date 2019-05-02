@@ -18,12 +18,7 @@ class CarsController extends Controller
         return Car::all();
     }
 
-    // Get by Model.
-    public function getByModel()
-    {
-        //
-        return Car::where('series', 'S1')->get();
-    }
+
 
     /**
      * Show the form for creating a new resource.

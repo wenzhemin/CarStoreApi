@@ -11,6 +11,9 @@
 |
 */
 
+Route::get('/', 'SiteController@index')->name('home');
+// Route::get('/home', 'SiteController@index');
+
 /*
 route::get('/', function () {
     return view('welcome');

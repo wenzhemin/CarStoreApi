@@ -1,0 +1,12 @@
+/**
+* *************************************
+* BASIC
+* *************************************
+*/
+html body {
+    padding-top: 0;
+    margin-top: 0;
+    font-size: 1rem;
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+}

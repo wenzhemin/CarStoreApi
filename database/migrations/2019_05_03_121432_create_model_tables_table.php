@@ -14,10 +14,10 @@ class CreateModelTablesTable extends Migration
     public function up()
     {
         Schema::create('model_tables', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('name');
             $table->integer('brand_id')->unsigned();
-            $table->foreign('brand_id')->references('id')->on('brands');
+            // $table->foreign('brand_id')->references('id')->on('brands');
             $table->timestamps();
         });
     }

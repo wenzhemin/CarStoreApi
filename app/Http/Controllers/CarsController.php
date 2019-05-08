@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Car;
 
 class CarsController extends Controller
 {
@@ -14,8 +15,10 @@ class CarsController extends Controller
     public function index()
     {
         //
-        return 'INDEX';
+        return Car::all();
     }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -47,7 +50,7 @@ class CarsController extends Controller
      */
     public function show($id)
     {
-        //
+        return Car::find($id);
     }
 
     /**

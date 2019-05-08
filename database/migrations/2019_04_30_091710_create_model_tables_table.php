@@ -17,7 +17,7 @@ class CreateModelTablesTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->integer('brand_id')->unsigned();
-            $table->foreign('brand_id')->references('id')->on('brand');
+            $table->foreign('brand_id')->references('id')->on('brands');
             $table->timestamps();
         });
     }

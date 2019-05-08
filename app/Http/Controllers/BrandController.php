@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Car;
 
-class CarsController extends Controller
+use App\Http\Requests;
+use App\Brand;
+use App\Http\Resources\Brand as BrandResource;
+
+class BrandController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,11 +17,9 @@ class CarsController extends Controller
      */
     public function index()
     {
-        //
-        return Car::all();
+        $brands = Brand::paginate(15);
+        return BrandResource::collection($brands);
     }
-
-
 
     /**
      * Show the form for creating a new resource.
@@ -28,7 +29,6 @@ class CarsController extends Controller
     public function create()
     {
         //
-        return 'CREATE';
     }
 
     /**
@@ -50,7 +50,7 @@ class CarsController extends Controller
      */
     public function show($id)
     {
-        return Car::find($id);
+        //
     }
 
     /**

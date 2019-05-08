@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit1bf8caa53b0370bd20547de4fafee654
+class ComposerStaticInit72b531f0de9cf0e659ba2a5fbaab4907
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -370,7 +370,6 @@ class ComposerStaticInit1bf8caa53b0370bd20547de4fafee654
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
-        'App\\Http\\Controllers\\CarsController' => __DIR__ . '/../..' . '/app/Http/Controllers/CarsController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
@@ -391,6 +390,7 @@ class ComposerStaticInit1bf8caa53b0370bd20547de4fafee654
         'BeyondCode\\DumpServer\\DumpServerServiceProvider' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/DumpServerServiceProvider.php',
         'BeyondCode\\DumpServer\\Dumper' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/Dumper.php',
         'BeyondCode\\DumpServer\\RequestContextProvider' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/RequestContextProvider.php',
+        'BrandsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/BrandsTableSeeder.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonImmutable' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonImmutable.php',
         'Carbon\\CarbonInterface' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterface.php',
@@ -420,6 +420,8 @@ class ComposerStaticInit1bf8caa53b0370bd20547de4fafee654
         'Carbon\\Traits\\Units' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/Units.php',
         'Carbon\\Traits\\Week' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/Week.php',
         'Carbon\\Translator' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Translator.php',
+        'CarsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/CarsTableSeeder.php',
+        'ColorsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/ColorsTableSeeder.php',
         'Cron\\AbstractField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/AbstractField.php',
         'Cron\\CronExpression' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/CronExpression.php',
         'Cron\\DayOfMonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/DayOfMonthField.php',
@@ -1281,6 +1283,7 @@ class ComposerStaticInit1bf8caa53b0370bd20547de4fafee654
         'Illuminate\\Database\\Capsule\\Manager' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Capsule/Manager.php',
         'Illuminate\\Database\\Concerns\\BuildsQueries' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Concerns/BuildsQueries.php',
         'Illuminate\\Database\\Concerns\\ManagesTransactions' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Concerns/ManagesTransactions.php',
+        'Illuminate\\Database\\ConfigurationUrlParser' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/ConfigurationUrlParser.php',
         'Illuminate\\Database\\Connection' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Connection.php',
         'Illuminate\\Database\\ConnectionInterface' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/ConnectionInterface.php',
         'Illuminate\\Database\\ConnectionResolver' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/ConnectionResolver.php',
@@ -2020,6 +2023,7 @@ class ComposerStaticInit1bf8caa53b0370bd20547de4fafee654
         'Mockery\\Undefined' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Undefined.php',
         'Mockery\\VerificationDirector' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/VerificationDirector.php',
         'Mockery\\VerificationExpectation' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/VerificationExpectation.php',
+        'ModelTablesTableSeeder' => __DIR__ . '/../..' . '/database/seeds/ModelTablesTableSeeder.php',
         'Monolog\\ErrorHandler' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/ErrorHandler.php',
         'Monolog\\Formatter\\ChromePHPFormatter' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Formatter/ChromePHPFormatter.php',
         'Monolog\\Formatter\\ElasticaFormatter' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Formatter/ElasticaFormatter.php',
@@ -3898,10 +3902,10 @@ class ComposerStaticInit1bf8caa53b0370bd20547de4fafee654
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit1bf8caa53b0370bd20547de4fafee654::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit1bf8caa53b0370bd20547de4fafee654::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit1bf8caa53b0370bd20547de4fafee654::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit1bf8caa53b0370bd20547de4fafee654::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit72b531f0de9cf0e659ba2a5fbaab4907::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit72b531f0de9cf0e659ba2a5fbaab4907::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit72b531f0de9cf0e659ba2a5fbaab4907::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit72b531f0de9cf0e659ba2a5fbaab4907::$classMap;
 
         }, null, ClassLoader::class);
     }

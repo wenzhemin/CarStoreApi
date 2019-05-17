@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Car;
 use App\Http\Resources\Car as CarResource;
+use Illuminate\Support\Facades\DB;
 
 class CarController extends Controller
 {
@@ -111,4 +112,39 @@ class CarController extends Controller
             return new CarResource($car);
         }
     }
+    
+    
+    // simulate views
+    public function carsView()
+    {
+        return DB::table('cars')
+            ->leftJoin('model_tables','cars.model_id','=','model_tables.id')
+            ->leftJoin('colors','cars.color_id','=','colors.id')
+            ->select('cars.id','cars.price','cars.img_url','cars.description_text','colors.name as color_name','model_tables.name as model_name','cars.series')
+            ->orderBy('id', 'ASC')
+            ->get();
+    }
+
+    public function carsByModelView($model_id)
+    {
+        return DB::table('cars')
+            ->where('cars.model_id', $model_id)
+            ->leftJoin('model_tables','cars.model_id','=','model_tables.id')
+            ->leftJoin('colors','cars.id','=','colors.id')
+            ->select('cars.id','cars.price','cars.img_url','cars.description_text','colors.name as color_name','model_tables.name as model_name','cars.series')
+            ->orderBy('id', 'ASC')
+            ->get();
+    }
+
+    public function getOneCarView($id)
+    {
+        return DB::table('cars')
+            ->where('cars.id', $id)
+            ->leftJoin('model_tables','cars.model_id','=','model_tables.id')
+            ->leftJoin('colors','cars.id','=','colors.id')
+            ->select('cars.id','cars.price','cars.img_url','cars.description_text','colors.name as color_name','model_tables.name as model_name','cars.series')
+            ->orderBy('id', 'ASC')
+            ->get();
+    }
+    
 }

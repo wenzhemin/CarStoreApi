@@ -24,6 +24,10 @@ Route::delete('cars/{id}', 'CarController@destroy');
 
 Route::get('carsbymodel/{model_id}', 'CarController@getByModel');
 
+Route::get('carsview', 'CarController@carsView');
+Route::get('carsbymodelview/{model_id}', 'CarController@carsByModelView');
+Route::get('getonecarview/{id}', 'CarController@getOneCarView');
+
 // brands
 Route::get('brands', 'BrandController@index');
 Route::get('brands/{id}', 'BrandController@show');

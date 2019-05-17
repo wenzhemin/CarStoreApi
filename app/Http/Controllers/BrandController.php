@@ -17,8 +17,15 @@ class BrandController extends Controller
      */
     public function index()
     {
-        $brands = Brand::paginate(15);
+        $brands = Brand::orderBy('id', 'ASC')->get();
         return BrandResource::collection($brands);
+    }
+
+    // get token
+    public function token()
+    {
+        $token = csrf_token();
+        return $token;
     }
 
     /**
@@ -39,7 +46,15 @@ class BrandController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $brand = $request->isMethod('put') ? Brand::findOrFail
+        ($request->id) : new Brand;
+
+        $brand->id = $request->input('id');
+        $brand->name = $request->input('name');
+
+        if($brand->save()) {
+            return new BrandResource($brand);
+        }
     }
 
     /**
@@ -50,7 +65,8 @@ class BrandController extends Controller
      */
     public function show($id)
     {
-        //
+        $brand = Brand::findOrFail($id);
+        return new BrandResource($brand);
     }
 
     /**
@@ -84,6 +100,10 @@ class BrandController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $brand = Brand::findOrFail($id);
+
+        if($brand->delete()) {
+            return new BrandResource($brand);
+        }
     }
 }
